@@ -418,11 +418,14 @@ if __name__ == "__main__":
                     report_pdf.alias_nb_pages()
                     report_pdf.create_report(site_report_data_list2, site_params)
                     # if os.path.isdir(f"../{site_params[5]}/{site_params[1]}"):
-                    if os.path.isdir(f"/mnt/ics/Reports/{site_params[1]}"):
-                        report_pdf.output(f"/mnt/ics/Reports/{site_params[1]}/{site_params[1]}_{report_last_year}_{report_last_month:02}.pdf")
+                    if os.path.isdir(f"/mnt/ics/Отчетность по работе станций/{site_params[1]}"):
+                        report_pdf.output(f"/mnt/ics/Отчетность по работе станций/{site_params[1]}/{site_params[1]}_{report_last_year}_{report_last_month:02}.pdf")
                     else:
-                        os.makedirs(f"../{site_params[5]}/{site_params[1]}")
-                        report_pdf.output(f"../{site_params[5]}/{site_params[1]}/{site_params[1]}_{report_last_year}_{report_last_month:02}.pdf")
+                        if os.path.isdir(f"../{site_params[5]}/{site_params[1]}"):
+                            report_pdf.output(f"../{site_params[5]}/{site_params[1]}/{site_params[1]}_{report_last_year}_{report_last_month:02}.pdf")
+                        else:
+                            os.makedirs(f"../{site_params[5]}/{site_params[1]}")
+                            report_pdf.output(f"../{site_params[5]}/{site_params[1]}/{site_params[1]}_{report_last_year}_{report_last_month:02}.pdf")
             time.sleep(10.0)
 
 
@@ -478,11 +481,14 @@ if __name__ == "__main__":
                         #  Set {nb} alias for PDF document footer.
                         print_pdf_file.alias_nb_pages()
                         print_pdf_file.create_report(print_report_data_list2, print_report_site_params)
-                        if os.path.isdir(f"/mnt/ics/Reports/{print_report_site_params[5]}/{print_report_site_params[1]}"):
-                            print_pdf_file.output(f"/mnt/ics/Reports/{print_report_site_params[5]}/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
+                        if os.path.isdir(f"/mnt/ics/Отчетность по работе станций/{print_report_site_params[5]}/{print_report_site_params[1]}"):
+                            print_pdf_file.output(f"/mnt/ics/Отчетность по работе станций/{print_report_site_params[5]}/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
                         else:
-                            os.makedirs(f"../{print_report_site_params[5]}/{print_report_site_params[1]}")
-                            print_pdf_file.output(f"../{print_report_site_params[5]}/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
+                            if os.path.isdir(f"../{print_report_site_params[5]}/{print_report_site_params[1]}"):
+                                print_pdf_file.output(f"../{print_report_site_params[5]}/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
+                            else:
+                                os.makedirs(f"../{print_report_site_params[5]}/{print_report_site_params[1]}")
+                                print_pdf_file.output(f"../{print_report_site_params[5]}/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
 
 
         #  Restore report of certain date from PLC.
