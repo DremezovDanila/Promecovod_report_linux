@@ -1,0 +1,9 @@
+site name;site name in russian;txt file report directory;ip and port;parameter amount;pdf file report directory;columns names;columns width coefficient (int);
+vzu_chern;ВЗУ Чернь;reports;192.168.236.50:503;8;pdf reports;Расход на входе 1, м3:Расход на входе 2, м3:Расход на выходе, м3:Расход на промыв., м3:Расход на выходе 1, м3:Расход на выходе 2, м3:Расход на выходе, м3:Расход энергии, КВтч;1;
+
+site name;site name in russian;txt file report directory;ip and port;parameter amount;pdf file report directory;columns names;columns width coefficient (int);
+vzu_teploe;ВЗУ Теплое;reports;192.168.241.50:503;6;pdf reports;Расход на входе, м3:Расход на промывку, м3:Расход на выходе 1, м3:Расход на выходе 2, м3:Расход на выходе, м3:Расход энергии, КВтч;1;
+
+site name;site name in russian;txt file report directory;ip and port;parameter amount;pdf file report directory;columns names;columns width coefficient (int);
+vzu_nord;ВЗУ Норд;reports;192.168.238.50:503;6;pdf reports;Расход на входе, м3:Расход на промывку, м3:Расход на выходе 1, м3:Расход на выходе 2, м3:Расход на выходе, м3:Расход энергии, КВтч;9;
+
