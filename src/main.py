@@ -36,7 +36,7 @@ class Pdf1(fpdf.FPDF):
         #  Create the first page.
         self.add_page()
         #  Download the font supporting Unicode and set it. *It has to be added before used.
-        self.add_font(family="NotoSans", style="", fname=r"NotoSans-Regular.ttf", uni=True)
+        self.add_font(family="NotoSans", style="", fname=r"../etc/fonts/NotoSans-Regular.ttf", uni=True)
         #  Filling in general information.
         #  First line with current date on the left and company name on the right.
         self.set_font(family="NotoSans", size=14)
