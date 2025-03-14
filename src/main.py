@@ -41,7 +41,7 @@ class Pdf1(fpdf.FPDF):
         #  First line with current date on the left and company name on the right.
         self.set_font(family="NotoSans", size=14)
         self.cell(w=(self.w - (margins[0] + abs(margins[2]))) / 2, h=self.font_size,
-                  txt="{:%Y.%m.%d}".format(date_and_time), ln=0, align="L")
+                  txt="{:%d.%m.%Y}".format(date_and_time), ln=0, align="L")
         self.cell(w=(self.w - (margins[0] + abs(margins[2]))) / 2, h=self.font_size, txt='ООО "Промэковод"', ln=0,
                   align="R")
         cur_x = left_margin
@@ -458,8 +458,7 @@ if __name__ == "__main__":
 
             if print_report_input_data_ok:
                 #  Get path to text file.
-                print_report_data_path = os.path.join(os.path.dirname(__file__), f"{os.pardir}/reports/"
-                                                                                 f"{print_pdf_site_name}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}")
+                print_report_data_path = os.path.join(os.path.dirname(__file__), f"{os.pardir}/reports/{print_pdf_site_name}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}")
                 if os.path.isfile(print_report_data_path):
                     with open(print_report_data_path, "r", encoding="UTF-8") as print_report_file:
                         print_report_data_list = print_report_file.readlines()
@@ -481,8 +480,8 @@ if __name__ == "__main__":
                         #  Set {nb} alias for PDF document footer.
                         print_pdf_file.alias_nb_pages()
                         print_pdf_file.create_report(print_report_data_list2, print_report_site_params)
-                        if os.path.isdir(f"/mnt/ics/Отчетность по работе станций/{print_report_site_params[5]}/{print_report_site_params[1]}"):
-                            print_pdf_file.output(f"/mnt/ics/Отчетность по работе станций/{print_report_site_params[5]}/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
+                        if os.path.isdir(f"/mnt/ics/Отчетность по работе станций/{print_report_site_params[1]}"):
+                            print_pdf_file.output(f"/mnt/ics/Отчетность по работе станций/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
                         else:
                             if os.path.isdir(f"../{print_report_site_params[5]}/{print_report_site_params[1]}"):
                                 print_pdf_file.output(f"../{print_report_site_params[5]}/{print_report_site_params[1]}/{print_report_site_params[1]}_{print_pdf_report_date_year_int}_{print_pdf_report_date_month_int:02}.pdf")
