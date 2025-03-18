@@ -12,6 +12,7 @@ from calendar import monthrange
 import math
 from definitions import ROOT_DIR, root_dir
 
+print("project directory")
 print(root_dir, type(root_dir))
 print(ROOT_DIR, type(ROOT_DIR))
 
@@ -303,8 +304,8 @@ if __name__ == "__main__":
 
         #  Start polls once a day at specified time (next day after report get formed in PLC). PLC draws report at
         #  23:59:59 and client polls start several minutes later.
-        #if cur_time_hour == 0 and cur_time_min == 5 and cur_time_sec == 0:
-        if cur_time_sec == 0:
+        if cur_time_hour == 0 and cur_time_min == 5 and cur_time_sec > 0 and cur_time_sec < 20:
+        #if cur_time_sec == 0:
             #  Get date of previous day (report).
             if cur_date_day == 1 and cur_date_month == 1:
                 report_last_year = cur_date_year - 1
